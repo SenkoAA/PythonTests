@@ -41,8 +41,14 @@ def main():
     
     try:
         obj = Main(15)
-        obj.method(20)
+        obj1 = Main(17)
+        #obj.method(20)
+        #Main.b = 12
         #Main.clsmethod(20)
+        print('prev a = {}'.format(obj1.a))
+        #Main.a = 777
+        obj.a = 777
+        print('new a = {}'.format(obj1.a))
         #Main.stcmethod(20)
         print(Main.otherstcmethod(10))
         print(obj.othermethod(10))
