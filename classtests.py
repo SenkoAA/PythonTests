@@ -11,19 +11,36 @@ class Main(object):
         self.b = b
 
     def method(self, c):
-        pass
+        print(self.a)
+        print(self.b)
+        print(c)
 
     @classmethod
-    def class_method(cls, d):
-        pass
-
+    def clsmethod(cls, c):
+        print(cls.a)
+        print(cls.b)
+        print(c)
+    
     @staticmethod
-    def static_method(a, b, c, d):
-        pass
+    def stcmethod(c):
+        print(a)
+        print(b)
+        print(c)
 
 def main():
-    for arg in sys.argv:
-        print(arg)
+    for idx, arg in enumerate(sys.argv):
+        print('arg{} = {}'.format(idx, arg))
+    
+    try:
+        obj = Main(15)
+        obj.method
+        #Main.clsmethod(20)
+    except Exception as exc:
+        print(exc)
+    else:
+        print('Everithing is ok!')
+    finally:
+        print('Finally block!')
 
 if __name__ == '__main__':
     main()
