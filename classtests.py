@@ -26,6 +26,14 @@ class Main(object):
         print(a)
         print(b)
         print(c)
+    
+    @staticmethod
+    def otherstcmethod(c):
+        return c**2
+
+    def othermethod(self, c):
+        #return self.otherstcmethod(c)
+        return c**2
 
 def main():
     for idx, arg in enumerate(sys.argv):
@@ -33,12 +41,15 @@ def main():
     
     try:
         obj = Main(15)
-        obj.method
+        obj.method(20)
         #Main.clsmethod(20)
+        #Main.stcmethod(20)
+        print(Main.otherstcmethod(10))
+        print(obj.othermethod(10))
     except Exception as exc:
         print(exc)
     else:
-        print('Everithing is ok!')
+        print('Everything is ok!')
     finally:
         print('Finally block!')
 
